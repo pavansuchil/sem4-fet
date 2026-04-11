@@ -8,7 +8,7 @@ body {
 
 h2 {
     font-size: 24px;
-    color: darkblue;
+    color: black;
     font-family: Arial, sans-serif;
     text-align: center;
 }
@@ -16,7 +16,7 @@ h2 {
 
 li {
     font-size: 18px;
-    color: darkgreen;
+    color: red;
     font-family: Arial, sans-serif;
     text-align: center;
 }

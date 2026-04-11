@@ -1,1 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Portfolio - Mission Statement</title>
 
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+            color: #fff;
+        }
+
+        section {
+            max-width: 750px;
+            padding: 40px;
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+            text-align: center;
+            animation: fadeIn 1.2s ease-in-out;
+        }
+
+        h1 {
+            font-size: 44px;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #bfbfbf;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.7;
+            color: #d1d1d1;
+        }
+
+        /* Black/Silver Gradient Text */
+        .highlight {
+            background: linear-gradient(90deg, #ffffff, #aaaaaa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Elegant underline */
+        .highlight::after {
+            content: "";
+            position: absolute;
+            width: 70%;
+            height: 2px;
+            background: linear-gradient(to right, #ffffff, #777777);
+            left: 15%;
+            bottom: -5px;
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:hover {
+            transform: scale(1.02);
+            transition: 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>Hi, I'm Pavan S Uchil</h1>
+        <h2 class="highlight">Aspiring Software Engineer</h2>
+        <h3>Building efficient and scalable solutions</h3>
+
+        <p>
+            I am a passionate computer science student focused on developing 
+            innovative and efficient software solutions. I enjoy solving 
+            real-world problems using technology and continuously improving 
+            my skills in programming and development.
+        </p>
+
+        <h3>My Tech Stack</h3>
+        <p>
+            My technical skills include programming languages like C, C++, 
+            and Java. I am also familiar with web technologies such as 
+            HTML, CSS, and JavaScript.
+        </p>
+    </section>
+</body>
+</html>

@@ -3,6 +3,7 @@
 <head>
     <title>Pavan S Uchil | Portfolio</title>
 
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
 
     <style>
@@ -17,47 +18,67 @@
         }
 
         section {
-            max-width: 750px;
-            padding: 40px;
-            border-radius: 15px;
+            max-width: 700px;
+            padding: 35px;
+            border-radius: 12px;
             background: rgba(255,255,255,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
             text-align: center;
+            transition: 0.3s;
         }
 
-        /* Stylish heading font */
+        section:hover {
+            transform: translateY(-5px);
+        }
+
         h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 42px;
+            font-size: 40px;
             margin-bottom: 10px;
         }
 
-        /* Modern clean font */
         h2 {
             font-family: 'Poppins', sans-serif;
-            font-size: 26px;
-            margin-bottom: 15px;
+            font-size: 24px;
+            margin-bottom: 10px;
         }
 
         h3 {
             font-family: 'Poppins', sans-serif;
-            font-size: 20px;
+            font-size: 18px;
             color: #aaa;
+            margin-top: 15px;
         }
 
         p {
             font-family: 'Poppins', sans-serif;
-            font-size: 17px;
-            line-height: 1.7;
+            font-size: 16px;
+            line-height: 1.6;
             color: #ccc;
         }
 
-        /* Highlight text */
         .highlight {
             color: #e0e0e0;
             border-bottom: 2px solid #888;
             padding-bottom: 3px;
             font-weight: 600;
+        }
+
+        /* Simple Button */
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #fff;
+            color: #000;
+            border-radius: 5px;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+        }
+
+        .btn:hover {
+            background: #ccc;
         }
 
     </style>
@@ -78,10 +99,10 @@
 
         <h3>My Tech Stack</h3>
         <p>
-            My technical skills include programming languages like C, C++, 
-            and Java. I am also familiar with web technologies such as 
-            HTML, CSS, and JavaScript.
+            C, C++, Java, HTML, CSS, JavaScript
         </p>
+
+        <a href="#" class="btn">Contact Me</a>
     </section>
 </body>
 </html>

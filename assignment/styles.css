@@ -1,66 +1,28 @@
 body {
-    background: lightgray;
-    margin: 0;
-    padding: 0;
-}
-
-.kirana {
-    color: rgb(58, 58, 173);
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 30px;
-    padding-bottom: 5px;
-    margin-bottom: 15px;
-}
-
-.pavan {
-    color: black;
-    text-align: center;
-    font-family: monospace;
-    font-size: 40px;
-}
-
-.mm {
-    color: rgb(0, 0, 66);
-    text-align: center;
-    font-style: italic;
-}
-
-p {
-    color: rgb(189, 120, 0);
-    text-align: center;
-    font-size: 24px;
-    font-style: italic;
-    font-family: fantasy;
-}
-
-.m {
-    color: rgb(0, 0, 66);
-    text-align: center;
-    font-style: italic;
-}
-
-.dash {
-    width: 100px;
-    height: 5px;
-    background-color: #4d057a;
-    margin: 20px auto;
-    border-radius: 2px;
-}
-
-/* Button Styling */
-button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
+    font-family: Arial, sans-serif;
     font-size: 16px;
-    background-color: #4d057a;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    color: #333333;
+    text-align: center;
 }
 
-button:hover {
-    background-color: #32044f;
+
+h2 {
+    font-size: 24px;
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+li {
+    font-size: 18px;
+    color: red;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+
+ol, ul {
+    list-style-position: inside;
+    text-align: center;
 }

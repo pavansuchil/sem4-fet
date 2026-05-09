@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+      margin-top: 20px;
+    }
+
+    .color-layer {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    #blueBox {
+      background-color: blue;
+    }
+
+    #greenBox {
+      background-color: green;
+    }
+
+    #yellowBox {
+      background-color: yellow;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="showColor('blueBox')">Blue</button>
+  <button onclick="showColor('greenBox')">Green</button>
+  <button onclick="showColor('yellowBox')">Yellow</button>
+
+  <div class="container">
+    <div id="blueBox" class="color-layer"></div>
+    <div id="greenBox" class="color-layer"></div>
+    <div id="yellowBox" class="color-layer"></div>
+  </div>
+
+  <script>
+    function showColor(id) {
+      // Reset all z-index values
+      document.getElementById("blueBox").style.zIndex = 0;
+      document.getElementById("greenBox").style.zIndex = 0;
+      document.getElementById("yellowBox").style.zIndex = 0;
+
+      // Bring selected color to front
+      document.getElementById(id).style.zIndex = 1;
+    }
+  </script>
+
+</body>
+</html>
 

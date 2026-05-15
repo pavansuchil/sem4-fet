@@ -1,0 +1,155 @@
+<html>
+<head>
+    <title>Validated Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 320px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #0284c7;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #0369a1;
+        }
+
+        .output {
+            margin-top: 15px;
+            background: #e0f2fe;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        a {
+            display: block;
+            margin-top: 15px;
+            color: #0284c7;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Contact Form</h2>
+
+    <form id="myForm">
+        <input type="text" id="name" placeholder="Enter Name">
+        <div class="error" id="nameError"></div>
+
+        <input type="text" id="email" placeholder="Enter Email">
+        <div class="error" id="emailError"></div>
+
+        <textarea id="message" placeholder="Enter Message"></textarea>
+        <div class="error" id="msgError"></div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div class="output" id="output"></div>
+
+    <a href="https://pavansuchil.github.io/sem4-fet/index1.html">Go to Home Page</a>
+
+</div>
+
+<script>
+document.getElementById("myForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let msgError = document.getElementById("msgError");
+    
+    nameError.textContent = "";
+    emailError.textContent = "";
+    msgError.textContent = "";
+
+    let isValid = true;
+
+    
+    let namePattern = /^[A-Za-z ]+$/;
+    if (name === "") {
+        nameError.textContent = "Name is required";
+        isValid = false;
+    } else if (!namePattern.test(name)) {
+        nameError.textContent = "Only letters allowed";
+        isValid = false;
+    }
+
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (email === "") {
+        emailError.textContent = "Email is required";
+        isValid = false;
+    } else if (!emailPattern.test(email)) {
+        emailError.textContent = "Invalid email format";
+        isValid = false;
+    }
+
+    
+    if (message.length < 5) {
+        msgError.textContent = "Message must be at least 5 characters";
+        isValid = false;
+    }
+
+    
+    if (isValid) {
+        let result = `
+            <strong>Name:</strong> ${name} <br>
+            <strong>Email:</strong> ${email} <br>
+            <strong>Message:</strong> ${message}
+        `;
+        document.getElementById("output").innerHTML = result;
+    }
+});
+</script>
+
+</body>
+</html>

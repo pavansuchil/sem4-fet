@@ -1,1 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Simple Login UI</title>
 
+<style>
+
+    body{
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to right, #667eea, #764ba2);
+    }
+
+    .box{
+        width: 320px;
+        background: white;
+        padding: 25px;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    h2{
+        text-align: center;
+        color: #4c1d95;
+        margin-bottom: 15px;
+    }
+
+    label{
+        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+        color: #333;
+    }
+
+    input, select{
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+    }
+
+    .radio{
+        display: flex;
+        gap: 10px;
+        margin-top: 5px;
+    }
+
+    button{
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        background: #4c1d95;
+        color: white;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background: #6d28d9;
+    }
+
+    .output{
+        margin-top: 12px;
+        padding: 10px;
+        background: #ede9fe;
+        border-left: 5px solid #4c1d95;
+        border-radius: 8px;
+        font-size: 14px;
+    }
+
+    #homepage{
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        text-decoration: none;
+        color: #4c1d95;
+        font-weight: bold;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Login Form</h2>
+
+    <label>Role</label>
+    <div class="radio">
+        <input type="radio" name="role" value="Admin"> Admin
+        <input type="radio" name="role" value="User"> User
+    </div>
+
+    <label>Department</label>
+    <select id="dept">
+        <option>CS</option>
+        <option>EC</option>
+        <option>MECH</option>
+    </select>
+
+    <label>Skills</label>
+    <select id="skills" multiple>
+        <option>HTML</option>
+        <option>CSS</option>
+        <option>JS</option>
+    </select>
+
+    <button id="btn">Login</button>
+
+    <div class="output" id="output">Result will appear here</div>
+
+  
+    <a href="https://kishanvsalian.github.io/sem4-fet/index1.html">Go to Home Page</a>
+   
+
+</div>
+
+<script>
+
+let btn = document.getElementById("btn");
+let output = document.getElementById("output");
+let dept = document.getElementById("dept");
+let skills = document.getElementById("skills");
+
+dept.addEventListener("change", function(){
+    console.log("Dept changed to " + dept.value);
+});
+
+btn.addEventListener("click", function(){
+
+    let role = document.querySelector('input[name="role"]:checked');
+
+    if(!role){
+        alert("Select role first!");
+        return;
+    }
+
+    let passOk = false;
+
+    for(let i = 0; i < 3; i++){
+        let pass = prompt("Enter password (@123)");
+
+        if(pass === "@123"){
+            passOk = true;
+            break;
+        }
+    }
+
+    if(passOk){
+
+        let skillList = [];
+        for(let opt of skills.options){
+            if(opt.selected){
+                skillList.push(opt.value);
+            }
+        }
+
+        output.innerHTML =
+        "Role: " + role.value +
+        "<br>Dept: " + dept.value +
+        "<br>Skills: " + skillList.join(", ");
+
+    } else {
+        output.innerHTML = " Login Failed";
+    }
+
+});
+
+</script>
+
+</body>
+</html>
